@@ -1,3 +1,4 @@
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 console.log("app.js działa");
 let cart=[];
 
@@ -6,16 +7,14 @@ let cart=[];
 
 function addToCart(name, price){
 
-cart.push({
-    name:name,
-    price:price
-});
+    cart.push({
+        name: name,
+        price: price
+    });
 
-localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
 
-updateCart();
-
-alert("Dodano do koszyka: " + name);
+    updateCart();
 
 }
 
@@ -71,9 +70,11 @@ localStorage.setItem("cart", JSON.stringify(cart));
 
 function removeCart(index){
 
-cart.splice(index,1);
+    cart.splice(index, 1);
 
-updateCart();
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCart();
 
 }
 
