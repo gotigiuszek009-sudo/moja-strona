@@ -255,6 +255,20 @@ window.addEventListener("click", (e) => {
     }
 });
 </script>
+ <div id="popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);justify-content:center;align-items:center;">
+    <div style="background:white;padding:30px;border-radius:10px;width:400px;position:relative;">
+        <span onclick="document.getElementById('popup').style.display='none'"
+              style="position:absolute;right:15px;top:10px;cursor:pointer;font-size:25px;">&times;</span>
+
+        <h2>Zamów wycenę</h2>
+
+        <input type="text" placeholder="Imię"><br><br>
+        <input type="email" placeholder="Email"><br><br>
+        <textarea placeholder="Opisz zlecenie"></textarea><br><br>
+
+        <button>Wyślij</button>
+    </div>
+</div>
     
 </body>
 </html>
