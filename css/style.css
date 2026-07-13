@@ -1,4 +1,3 @@
-
 .popup {
     display: none;
     position: fixed;
@@ -37,10 +36,4 @@
 
 .popup-content button {
     width: 100%;
-    padding: 12px;
-    background: #9b642d;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
 }
