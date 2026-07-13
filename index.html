@@ -233,29 +233,28 @@ Kup
 
 
 <script>
-
 function dodaj(produkt){
-
-alert(produkt + " - skontaktujemy się w sprawie zamówienia!");
-
+    alert(produkt + " - skontaktujemy się w sprawie zamówienia!");
 }
 
+const popup = document.getElementById("popup");
+const openBtn = document.getElementById("openPopup");
+const closeBtn = document.querySelector(".close");
+
+openBtn.addEventListener("click", () => {
+    popup.style.display = "flex";
+});
+
+closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+        popup.style.display = "none";
+    }
+});
 </script>
-
-<div id="popup" class="popup">
-    <div class="popup-content">
-        <span class="close">&times;</span>
-
-        <h2>Zamów wycenę</h2>
-
-        <form>
-            <input type="text" placeholder="Imię i nazwisko" required>
-            <input type="email" placeholder="E-mail" required>
-            <textarea placeholder="Opisz czego potrzebujesz"></textarea>
-            <button type="submit">Wyślij</button>
-        </form>
-    </div>
-</div>
     
 </body>
 </html>
