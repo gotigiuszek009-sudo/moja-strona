@@ -262,13 +262,13 @@ window.addEventListener("click", (e) => {
 
         <h2>Zamów wycenę</h2>
 
-        <input type="text" placeholder="Imię"><br><br>
-        <input type="email" placeholder="Email"><br><br>
-        <textarea placeholder="Opisz zlecenie"></textarea><br><br>
+     <form onsubmit="wyslijFormularz(event)">
+    <input type="text" placeholder="Imię i nazwisko" required>
+    <input type="email" placeholder="E-mail" required>
+    <textarea placeholder="Opisz czego potrzebujesz"></textarea>
 
-        <button>Wyślij</button>
-    </div>
-</div>
-    
+    <button type="submit">Wyślij</button>
+</form>
+        
 </body>
 </html>
