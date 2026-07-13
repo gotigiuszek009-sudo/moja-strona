@@ -86,8 +86,6 @@ document.getElementById("cart-window").style.display="none";
 // TRYB CIEMNY
 
 
-document.addEventListener("DOMContentLoaded", function(){
-
 const button = document.getElementById("theme-toggle");
 
 button.addEventListener("click", function(){
@@ -95,13 +93,9 @@ button.addEventListener("click", function(){
     document.body.classList.toggle("dark-mode");
 
     if(document.body.classList.contains("dark-mode")){
-
         button.textContent = "☀️ Tryb jasny";
-
     } else {
-
         button.textContent = "🌙 Tryb ciemny";
-
     }
 
 });
