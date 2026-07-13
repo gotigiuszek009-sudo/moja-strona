@@ -1,5 +1,3 @@
-console.log("app.js działa");
-console.log(document.getElementById("theme-toggle"));
 let cart=[];
 
 
@@ -92,16 +90,18 @@ document.addEventListener("DOMContentLoaded", function(){
 
 const button = document.getElementById("theme-toggle");
 
-console.log(button);
-
 button.addEventListener("click", function(){
 
     document.body.classList.toggle("dark-mode");
 
     if(document.body.classList.contains("dark-mode")){
+
         button.textContent = "☀️ Tryb jasny";
+
     } else {
+
         button.textContent = "🌙 Tryb ciemny";
+
     }
 
 });
