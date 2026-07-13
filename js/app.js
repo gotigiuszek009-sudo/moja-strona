@@ -88,17 +88,24 @@ document.getElementById("cart-window").style.display="none";
 
 document.addEventListener("DOMContentLoaded",()=>{
 
-
-const button=document.getElementById("theme-toggle");
+const button = document.getElementById("theme-toggle");
 
 
 button.addEventListener("click",()=>{
 
+    document.body.classList.toggle("dark-mode");
 
-document.body.classList.toggle("dark-mode");
 
+    if(document.body.classList.contains("dark-mode")){
+
+        button.textContent = "☀️ Tryb jasny";
+
+    } else {
+
+        button.textContent = "🌙 Tryb ciemny";
+
+    }
 
 });
-
 
 });
