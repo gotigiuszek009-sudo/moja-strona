@@ -223,3 +223,11 @@ color:white;
 color:white;
 
 }
+.dark-mode {
+    background:black;
+    color:white;
+}
+
+.dark-mode header {
+    background:#222;
+}
