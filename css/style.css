@@ -50,16 +50,24 @@ color:#222;
 
 
 button{
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
 
-padding:10px 18px;
-border:none;
-border-radius:8px;
 
-cursor:pointer;
+/* przycisk trybu - jasny motyw */
+#theme-toggle{
+    background:#222 !important;
+    color:white !important;
+}
 
-background:#222;
-color:white;
 
+/* przycisk trybu - ciemny motyw */
+.dark-mode #theme-toggle{
+    background:white !important;
+    color:black !important;
 }
 
 
