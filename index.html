@@ -127,8 +127,8 @@ footer{
 <h1>Meble marzeń do Twojego domu</h1>
 <p>Kuchnie • Szafy • Stoły • Zabudowy</p>
 
-<button onclick="alert('Skontaktuj się z nami!')">
-Zamów wycenę
+<button id="openPopup">
+    Zamów wycenę
 </button>
 
 </div>
@@ -242,6 +242,20 @@ alert(produkt + " - skontaktujemy się w sprawie zamówienia!");
 
 </script>
 
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
 
+        <h2>Zamów wycenę</h2>
+
+        <form>
+            <input type="text" placeholder="Imię i nazwisko" required>
+            <input type="email" placeholder="E-mail" required>
+            <textarea placeholder="Opisz czego potrzebujesz"></textarea>
+            <button type="submit">Wyślij</button>
+        </form>
+    </div>
+</div>
+    
 </body>
 </html>
