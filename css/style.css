@@ -215,3 +215,15 @@ background:#222;
 color:white;
 
 }
+/* normalny tryb - jasna strona */
+#theme-toggle {
+    background: #222;
+    color: white;
+}
+
+
+/* ciemny tryb - jasna wersja przycisku */
+.dark-mode #theme-toggle {
+    background: white;
+    color: black;
+}
