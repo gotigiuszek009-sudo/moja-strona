@@ -263,9 +263,11 @@ window.addEventListener("click", (e) => {
         <h2>Zamów wycenę</h2>
 
      <form action="https://formspree.io/f/xnjeqwde" method="POST">
-    <input type="text" placeholder="Imię i nazwisko" required>
-    <input type="email" placeholder="E-mail" required>
-    <textarea placeholder="Opisz czego potrzebujesz"></textarea>
+<input type="text" name="imie" placeholder="Imię i nazwisko" required>
+
+<input type="email" name="email" placeholder="E-mail" required>
+
+<textarea name="wiadomosc" placeholder="Opisz czego potrzebujesz"></textarea>
 
     <button type="submit">Wyślij</button>
 </form>
