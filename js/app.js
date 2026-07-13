@@ -7,17 +7,21 @@ let cart=[];
 
 function addToCart(name, price){
 
+    console.log("Dodano:", name, price);
+
     cart.push({
         name: name,
         price: price
     });
 
+    console.log(cart);
+
     localStorage.setItem("cart", JSON.stringify(cart));
 
+    console.log("Zapisano:", localStorage.getItem("cart"));
+
     updateCart();
-
 }
-
 
 
 function updateCart(){
