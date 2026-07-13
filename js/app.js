@@ -1,4 +1,5 @@
 console.log("app.js działa");
+console.log(document.getElementById("theme-toggle"));
 let cart=[];
 
 
