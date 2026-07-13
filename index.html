@@ -4,138 +4,202 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NordHome - Meble do Twojego domu</title>
+<title>Stolarz - Meble na wymiar</title>
 
-<link rel="stylesheet" href="css/style.css">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#f5f1ea;
+    color:#333;
+}
+
+header{
+    background:#5b3518;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+nav{
+    background:#3b220f;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    margin:15px;
+    text-decoration:none;
+}
+
+.hero{
+    padding:60px;
+    text-align:center;
+    background:url("https://images.unsplash.com/photo-1618220179428-22790b461013") center/cover;
+    color:white;
+}
+
+.hero h1{
+    font-size:45px;
+}
+
+button{
+    background:#8b5a2b;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    margin-top:20px;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+button:hover{
+    background:#5b3518;
+}
+
+section{
+    padding:40px;
+}
+
+.meble{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.karta{
+    background:white;
+    width:300px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px #aaa;
+}
+
+.karta img{
+    width:100%;
+    border-radius:10px;
+}
+
+.cena{
+    color:#8b5a2b;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.kontakt{
+    background:#5b3518;
+    color:white;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+
 </head>
 
 <body>
 
 <header>
-
-<div class="logo">
-NordHome
-</div>
-
-<nav>
-<a href="#">Start</a>
-<a href="#">Meble</a>
-<a href="#">Sypialnia</a>
-<a href="#">Salon</a>
-<a href="#">Kontakt</a>
-</nav>
-
-<button id="theme-toggle">
-🌙 Tryb ciemny
-</button>
-
-<div class="cart" onclick="openCart()">
-🛒 <span id="cart-count">0</span>
-</div>
-
+<h1>🪵 Stolarz Premium</h1>
+<p>Meble wykonane ręcznie na wymiar</p>
 </header>
 
 
-<section class="hero">
+<nav>
+<a href="#">Start</a>
+<a href="#produkty">Meble</a>
+<a href="#kontakt">Kontakt</a>
+</nav>
 
-<h1>
-Stwórz dom, w którym chce się być
-</h1>
+
+<div class="hero">
+
+<h1>Meble marzeń do Twojego domu</h1>
+<p>Kuchnie • Szafy • Stoły • Zabudowy</p>
+
+<button onclick="alert('Skontaktuj się z nami!')">
+Zamów wycenę
+</button>
+
+</div>
+
+
+<section id="produkty">
+
+<h2>Nasze produkty</h2>
+
+<div class="meble">
+
+
+<div class="karta">
+<img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf">
+
+<h3>Kuchnia na wymiar</h3>
 
 <p>
-Nowoczesne meble, wygoda i styl.
+Nowoczesne meble kuchenne wykonane z najlepszych materiałów.
 </p>
 
-<button>
-Zobacz produkty
-</button>
+<p class="cena">
+8500 zł
+</p>
 
-</section>
-
-
-
-<section class="categories">
-
-<h2>Kategorie</h2>
-
-<div class="category-box">
-
-<div>
-🛋️
-<h3>Salon</h3>
-</div>
-
-<div>
-🛏️
-<h3>Sypialnia</h3>
-</div>
-
-<div>
-🪑
-<h3>Jadalnia</h3>
-</div>
-
-<div>
-🖼️
-<h3>Dodatki</h3>
-</div>
-
-</div>
-
-</section>
-
-
-
-<section class="products">
-
-<h2>Popularne produkty</h2>
-
-
-<div class="product-list">
-
-
-<div class="product">
-
-<img src="https://picsum.photos/400/300?1">
-
-<h3>Sofa Modern</h3>
-
-<p>1999 zł</p>
-
-<button onclick="addToCart('Sofa Modern',1999)">
-Dodaj do koszyka
+<button onclick="dodaj('Kuchnia')">
+Kup
 </button>
 
 </div>
 
 
 
-<div class="product">
+<div class="karta">
 
-<img src="https://picsum.photos/400/300?2">
+<img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6">
 
-<h3>Łóżko Premium</h3>
+<h3>Szafa drewniana</h3>
 
-<p>1599 zł</p>
+<p>
+Solidna szafa wykonana przez stolarza.
+</p>
 
-<button onclick="addToCart('Łóżko Premium',1599)">
-Dodaj do koszyka
+<p class="cena">
+3000 zł
+</p>
+
+<button onclick="dodaj('Szafa')">
+Kup
 </button>
 
 </div>
 
 
 
-<div class="product">
+<div class="karta">
 
-<img src="https://picsum.photos/400/300?3">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
 
-<h3>Komoda Classic</h3>
+<h3>Stół drewniany</h3>
 
-<p>899 zł</p>
+<p>
+Ręcznie robiony stół do jadalni.
+</p>
 
-<button onclick="addToCart('Komoda Classic',899)">
-Dodaj do koszyka
+<p class="cena">
+2500 zł
+</p>
+
+<button onclick="dodaj('Stół')">
+Kup
 </button>
 
 </div>
@@ -147,34 +211,37 @@ Dodaj do koszyka
 
 
 
-<div id="cart-window">
+<section id="kontakt" class="kontakt">
 
-<h2>Koszyk</h2>
+<h2>Kontakt</h2>
 
-<div id="cart-items"></div>
+<p>📞 Telefon: 500 000 000</p>
 
-<h3>
-Razem: <span id="cart-total">0</span> zł
-</h3>
+<p>📧 Email: stolarz@email.pl</p>
 
-<button onclick="closeCart()">
-Zamknij
-</button>
+<p>📍 Polska</p>
 
-</div>
-
+</section>
 
 
 <footer>
 
-<p>
-© 2026 NordHome
-</p>
+© 2026 Stolarz Premium
 
 </footer>
 
 
-<script src="js/app.js"></script>
+
+<script>
+
+function dodaj(produkt){
+
+alert(produkt + " - skontaktujemy się w sprawie zamówienia!");
+
+}
+
+</script>
+
 
 </body>
 </html>
