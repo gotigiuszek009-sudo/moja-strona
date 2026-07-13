@@ -1,82 +1,95 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
 console.log("app.js działa");
-let cart=[];
 
 
-// KOSZYK
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+// DODAWANIE DO KOSZYKA
 
 function addToCart(name, price){
-
-    console.log("Dodano:", name, price);
 
     cart.push({
         name: name,
         price: price
     });
 
-    console.log(cart);
+    saveCart();
+    updateCart();
+
+    alert("Dodano do koszyka: " + name);
+}
+
+
+
+// ZAPIS KOSZYKA
+
+function saveCart(){
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    console.log("Zapisano:", localStorage.getItem("cart"));
-
-    updateCart();
 }
 
+
+
+// AKTUALIZACJA KOSZYKA
 
 function updateCart(){
 
-document.getElementById("cart-count").innerHTML = cart.length;
+    const count = document.getElementById("cart-count");
+    const items = document.getElementById("cart-items");
+    const totalBox = document.getElementById("cart-total");
 
 
-let items = document.getElementById("cart-items");
-
-items.innerHTML = "";
-
-
-let total = 0;
+    if(count){
+        count.textContent = cart.length;
+    }
 
 
-cart.forEach((item,index)=>{
+    if(items){
 
-total += item.price;
+        items.innerHTML = "";
 
-
-items.innerHTML += `
-
-<div class="cart-item">
-
-<p>
-${item.name}
-<br>
-<b>${item.price} zł</b>
-</p>
-
-<button onclick="removeCart(${index})">
-❌
-</button>
-
-</div>
-
-`;
-
-});
+        let total = 0;
 
 
-document.getElementById("cart-total").innerHTML = total;
+        cart.forEach((item,index)=>{
+
+            total += item.price;
 
 
-localStorage.setItem("cart", JSON.stringify(cart));
+            items.innerHTML += `
+            <div class="cart-item">
+
+                <span>
+                ${item.name}<br>
+                ${item.price} zł
+                </span>
+
+                <button onclick="removeCart(${index})">
+                ❌
+                </button>
+
+            </div>
+            `;
+
+        });
+
+
+        totalBox.textContent = total;
+
+    }
 
 }
 
 
 
+// USUWANIE
+
 function removeCart(index){
 
-    cart.splice(index, 1);
+    cart.splice(index,1);
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+    saveCart();
 
     updateCart();
 
@@ -84,40 +97,55 @@ function removeCart(index){
 
 
 
-function removeCart(index){
+// OTWIERANIE KOSZYKA
 
-cart.splice(index,1);
+function openCart(){
 
-localStorage.setItem("cart", JSON.stringify(cart));
-
-updateCart();
+    document.getElementById("cart-window").style.display="block";
 
 }
 
+
+
+// ZAMYKANIE KOSZYKA
 
 function closeCart(){
 
-document.getElementById("cart-window").style.display="none";
+    document.getElementById("cart-window").style.display="none";
 
 }
-
 
 
 
 // TRYB CIEMNY
 
+document.addEventListener("DOMContentLoaded",function(){
 
-const button = document.getElementById("theme-toggle");
+    updateCart();
 
-button.addEventListener("click", function(){
 
-    document.body.classList.toggle("dark-mode");
+    const button = document.getElementById("theme-toggle");
 
-    if(document.body.classList.contains("dark-mode")){
-        button.textContent = "☀️ Tryb jasny";
-    } else {
-        button.textContent = "🌙 Tryb ciemny";
+
+    if(button){
+
+        button.addEventListener("click",function(){
+
+            document.body.classList.toggle("dark-mode");
+
+
+            if(document.body.classList.contains("dark-mode")){
+
+                button.textContent="☀️ Tryb jasny";
+
+            }else{
+
+                button.textContent="🌙 Tryb ciemny";
+
+            }
+
+        });
+
     }
 
 });
-updateCart();
