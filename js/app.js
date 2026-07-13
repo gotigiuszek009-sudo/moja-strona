@@ -4,14 +4,18 @@ let cart=[];
 
 // KOSZYK
 
-function addToCart(name,price){
+function addToCart(name, price){
 
 cart.push({
-name:name,
-price:price
+    name:name,
+    price:price
 });
 
+localStorage.setItem("cart", JSON.stringify(cart));
+
 updateCart();
+
+alert("Dodano do koszyka: " + name);
 
 }
 
@@ -19,39 +23,47 @@ updateCart();
 
 function updateCart(){
 
-document.getElementById("cart-count").innerHTML=cart.length;
+document.getElementById("cart-count").innerHTML = cart.length;
 
 
-let items=document.getElementById("cart-items");
+let items = document.getElementById("cart-items");
 
-items.innerHTML="";
+items.innerHTML = "";
 
 
-let total=0;
+let total = 0;
 
 
 cart.forEach((item,index)=>{
 
-total+=item.price;
+total += item.price;
 
 
-items.innerHTML+=`
+items.innerHTML += `
+
+<div class="cart-item">
 
 <p>
-${item.name} - ${item.price} zł
+${item.name}
+<br>
+<b>${item.price} zł</b>
+</p>
 
 <button onclick="removeCart(${index})">
 ❌
 </button>
 
-</p>
+</div>
 
 `;
 
 });
 
 
-document.getElementById("cart-total").innerHTML=total;
+document.getElementById("cart-total").innerHTML = total;
+
+
+localStorage.setItem("cart", JSON.stringify(cart));
 
 }
 
@@ -67,12 +79,15 @@ updateCart();
 
 
 
-function openCart(){
+function removeCart(index){
 
-document.getElementById("cart-window").style.display="block";
+cart.splice(index,1);
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+updateCart();
 
 }
-
 
 
 function closeCart(){
@@ -100,3 +115,4 @@ button.addEventListener("click", function(){
     }
 
 });
+updateCart();
