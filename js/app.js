@@ -101,7 +101,14 @@ function removeCart(index){
 
 function openCart(){
 
-    document.getElementById("cart-window").style.display="block";
+    document.getElementById("cart-window").style.display = "block";
+
+}
+
+
+function closeCart(){
+
+    document.getElementById("cart-window").style.display = "none";
 
 }
 
@@ -111,7 +118,7 @@ function openCart(){
 
 function closeCart(){
 
-    document.getElementById("cart-window").style.display="none";
+    document.getElementById("cart-window").style.display = "none";
 
 }
 
